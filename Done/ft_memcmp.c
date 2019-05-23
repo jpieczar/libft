@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 07:22:27 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/23 10:01:35 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/05/23 13:08:16 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/05/23 13:36:14 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*p1;
+	char	*p2;
 
 	i = 0;
-	if (s[i] == '\0')
-		return ((char*)s);
-	while (s[i])
+	p1 = (char*)s1;
+	p2 = (char*)s2;
+	while (i > n)
 	{
-		if (s[i] == c)
-			return ((char*)&s[i]);
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
 		i++;
 	}
-	return (NULL);
+	return (p1[i] - p2[i]);
 }

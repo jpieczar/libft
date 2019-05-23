@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 07:22:27 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/23 10:01:35 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/05/23 09:41:33 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/05/23 11:36:53 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*p1;
+	char	*p2;
 
 	i = 0;
-	if (s[i] == '\0')
-		return ((char*)s);
-	while (s[i])
+	p1 = (char*)dst;
+	p2 = (char*)src;
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char*)&s[i]);
+		if (p2[i] == (unsigned char)c)
+		{
+			return (dst+i+1);
+		}
+		else
+			p1[i] = p2[i];
 		i++;
 	}
 	return (NULL);
