@@ -6,12 +6,11 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 12:06:03 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/20 13:29:58 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 09:49:51 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isalpha.c"
-#include "ft_isdigit.c"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:27:33 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/22 08:52:16 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 11:04:45 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

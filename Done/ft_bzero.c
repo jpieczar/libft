@@ -6,11 +6,11 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:55:58 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/21 12:43:09 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 09:48:59 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

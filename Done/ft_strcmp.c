@@ -6,9 +6,11 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:53:49 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/22 14:01:38 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 09:56:31 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

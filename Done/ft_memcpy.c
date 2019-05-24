@@ -6,11 +6,11 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 07:28:44 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/23 09:38:03 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 09:52:32 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

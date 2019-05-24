@@ -6,19 +6,22 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:27:33 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/22 12:00:24 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/24 13:22:55 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 
 	i = 0;
-	while ((dst[i]) && (src[i]))
+	while (src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }
