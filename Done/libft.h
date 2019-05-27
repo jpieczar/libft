@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 16:01:05 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/24 10:55:08 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/27 10:22:35 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define	LIBFT_H
 
 #include <stdlib.h>
+#include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
