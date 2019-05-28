@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:16:13 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/27 12:29:35 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/28 08:09:33 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,5 @@
 void	ft_putstr(const char *s)
 {
 	if (s != NULL)
-	{
-		int	i;
-
-		i = 0;
-		while (s[i])
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
-	}
+		ft_putstr_fd(s, 1);
 }
