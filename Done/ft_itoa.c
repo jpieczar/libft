@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 07:20:02 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/29 16:11:40 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/05/29 08:32:54 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/05/29 09:51:07 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_itoa(int n)
 {
-	char	*pntr;
-	int	i;
+	int		i;
+	char	*res;
 
 	i = 0;
-	pntr = (char*)malloc(sizeof(char)*(ft_strlen(s) + 1));
-	if (pntr == NULL)
-		return (NULL);
-	while (s[i])
+	if ((n != 0) && !(res = malloc(10)))
 	{
-		pntr[i] = s[i];
-		i++;
+		while (n != 0)
+		{
+			res[i] = (n / 10);
+			n /= 10;
+			i++;
+		}
+		res[i] = '\0';
+		return (res);
 	}
-	pntr[i] = '\0';
-	return (pntr);
+	return (NULL);
 }

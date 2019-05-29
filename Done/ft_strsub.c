@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 07:20:02 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/29 16:11:40 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/05/28 13:11:24 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/05/28 14:02:43 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	char	*pntr;
-	int	i;
-
-	i = 0;
-	pntr = (char*)malloc(sizeof(char)*(ft_strlen(s) + 1));
-	if (pntr == NULL)
-		return (NULL);
-	while (s[i])
+	if (s != NULL)
 	{
-		pntr[i] = s[i];
-		i++;
+		size_t	i;
+		int		j;
+		char	*str;
+
+		j = 0;
+		i = (size_t)start;
+		if (!(str = malloc((len + 1) * sizeof(char))))
+			return (NULL);
+		while (i < len)
+		{
+			str[j] = s[i];
+			i++;
+			j++;
+		}
+		str[j] = '\0';
+		return (str);
 	}
-	pntr[i] = '\0';
-	return (pntr);
+	return (NULL);
 }

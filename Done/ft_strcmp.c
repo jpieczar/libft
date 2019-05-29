@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:53:49 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/24 09:56:31 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/05/29 11:14:46 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
 
-	i = 0;
-	while (s1[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (s1[i] - s2[i]);
+	return (ft_memcmp(s1, s2, ft_strlen(s1) + 1));
 }
