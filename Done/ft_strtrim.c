@@ -1,61 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 11:16:55 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/03 11:16:58 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/06/03 11:17:08 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/06/03 11:17:10 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+char	*ft_strtrim(const char *s)
 {
 	int	i;
+	int	j;
+	int	len;
+	char	*str;
 
 	i = 0;
-	if (n == 0)
-		return (1);
-	else
-	{
-		while (n > 0)
-		{
-			n /= 10;
-			i++;
-		}
-		return (i);
-	}
-}
-
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		len;
-	int		w;
-
-	w = 1;
 	len = 0;
-	if (n < 0)
+	while ((s[i] == ' ') || ((s[i] == '\n') || (s[i] == '\t')))
+		i++;
+	j = i;
+	while (((s[i] != ' ') && ((s[i] != '\n') && (s[i] != '\t'))) && (s[i]))
 	{
-		w = 0;
-		n *= -1;
 		len++;
+		i++;
 	}
-	len += ft_len(n);
+	i = 0;
 	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	str[len] = '\0';
-	len--;
-	while (len >= 0)
+	while (i != len)
 	{
-		str[len] = ((n % 10) + 48);
-		n /= 10;
-		len--;
+		str[i] = s[j];
+		i++;
+		j++;
 	}
-	if (w == 0)
-		str[0] = '-';
+	str[i] = '\0';
 	return (str);
 }
