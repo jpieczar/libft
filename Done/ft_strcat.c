@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 07:27:33 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/24 11:04:45 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:59:17 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strcat(char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
-	while(s1[i])
+	while (s1[i])
 		i++;
 	while (s2[j])
 	{

@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:55:58 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/24 09:48:59 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:54:35 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_bzero(void *s, size_t n)
 	pntr = s;
 	i = 0;
 	if (n == 0)
-		return;
+		return ;
 	while (i < n)
 	{
 		pntr[i] = 0;

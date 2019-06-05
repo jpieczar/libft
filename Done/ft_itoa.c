@@ -6,13 +6,13 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:16:55 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/03 11:16:58 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:05:29 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+static	int	ft_len(int n)
 {
 	int	i;
 

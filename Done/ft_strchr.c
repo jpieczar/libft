@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:22:27 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/28 16:05:05 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:33:57 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char*)&s[i]);
 		i++;
 	}
-	if (s[i] == '\0')
-		return ((char*)&s[i]);
-	return (NULL);
+	return ((char*)&s[i]);
 }

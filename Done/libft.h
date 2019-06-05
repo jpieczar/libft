@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 16:01:05 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/03 11:52:58 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:02:47 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
 
 #endif

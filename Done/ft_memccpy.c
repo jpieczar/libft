@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 09:41:33 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/29 14:43:15 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:55:34 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		p1[i] = p2[i];
 		if (p2[i] == chr)
-			return ((void*)dst+i+1);
+			return ((void*)dst + i + 1);
 		i++;
 	}
 	return (NULL);

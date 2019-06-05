@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:12:42 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/29 08:15:32 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 09:02:06 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		res = ((res * 10) + (str[i] - 48));
-		i++;	
+		i++;
 	}
 	return (res * mul);
 }

@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:37:35 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/05/29 16:02:18 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:56:30 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i--;
 			p1[i] = p2[i];
 		}
-		return((void*)dst);
+		return ((void*)dst);
 	}
 	dst = ft_memcpy(dst, src, len);
 	return ((void*)dst);
