@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:16:55 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/05 08:05:29 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/06 12:00:09 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,45 @@
 
 static	int	ft_len(int n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
 		return (1);
-	else
+	if (n < 0)
+		i++;
+	while (n)
 	{
-		while (n > 0)
-		{
-			n /= 10;
-			i++;
-		}
-		return (i);
+		n /= 10;
+		i++;
 	}
+	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
-	int		len;
-	int		w;
+	size_t	len;
+	size_t	mul;
+	size_t	i;
 
-	w = 1;
-	len = 0;
-	if (n < 0)
-	{
-		w = 0;
-		n *= -1;
-		len++;
-	}
-	len += ft_len(n);
+	i = 0;
+	mul = 1;
+	len = ft_len(n);
 	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[len] = '\0';
-	len--;
-	while (len >= 0)
+	if (n < 0)
 	{
-		str[len] = ((n % 10) + 48);
-		n /= 10;
-		len--;
-	}
-	if (w == 0)
 		str[0] = '-';
+		mul = -1;
+		i = 1;
+	}
+	while (len > i)
+	{
+		len--;
+		str[len] = (48 + (n % 10) * mul);
+		n /= 10;
+	}
 	return (str);
 }
