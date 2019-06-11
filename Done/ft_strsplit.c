@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_wordcount(char *s, char	c)
+static int	ft_wc(const char *s, char c)
 {
 	int	i;
 	int	res;
@@ -30,54 +30,33 @@ static int	ft_wordcount(char *s, char	c)
 				i++;
 		}
 	}
-	return (res);
+	return (res + 1);
 }
 
-static int	ft_wordlen(char *s, const char c)
+char		**ft_strsplit(const char *s, char c)
 {
+	char	**arr;
 	int	i;
-	int	res;
+	size_t	j;
+	int	k;
 
 	i = 0;
-	if (s[i] == c)
-		i++;
-	else
-	{
-		res = 0;
-		while (s[i] && (s[i] != c))
-		{
-			res++;
-			i++;
-		}
-		return (res);
-	}
-	return (0);
-}
-
-char	**ft_strsplit(const char *s, char c)
-{
-	char	**str;
-	int		i;
-	int		j;
-	int		k;
-
-	j = 0;
 	k = 0;
-	i = ft_wordcount((char*)s, c);
-	if (!(str = (char**)malloc(sizeof(char*) * i)))
+	if (!(arr = (char**)malloc(sizeof(char*) * ft_wc(s, c))))
 		return (NULL);
-	while (s[j] && (k != i))
+	while (s[i])
 	{
-		if (s[j] == c)
-			j++;
-		if (s[j] != c && s[j])
+		j = 0;
+		if (s[i] != c)
 		{
-			if(!(str[k] = (char*)malloc(sizeof(char) * ft_wordlen((char*)&s[j], c))))
-				return (NULL);
-			while (s[j] != c && s[j])
+			while (s[i + j] && s[i + j] != c)
 				j++;
+			arr[k] = ft_strsub(s, i, j);
+			i = i + j - 1;
+			k++;
 		}
-		k++;
+		i++;
 	}
-	return (str);
+	arr[k] = NULL;
+	return (arr);
 }

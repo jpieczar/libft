@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:17:08 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/06 08:37:22 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:11:27 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,19 @@
 
 char	*ft_strtrim(const char *s)
 {
-	int		i;
-	int		j;
-	int		len;
-	char	*str;
+	unsigned	int	i;
+	size_t			len;
 
 	i = 0;
-	j = 0;
-	len = 0;
-	while ((s[i] == ' ') || ((s[i] == '\n') || (s[i] == '\t')))
-		i++;
-	j = i;
-	while (((s[i] != ' ') && ((s[i] != '\n') && (s[i] != '\t'))) && (s[i]))
-	{
-		len++;
-		i++;
-	}
-	i = 0;
-	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+	if (!s)
 		return (NULL);
-	while (i < len)
-	{
-		str[i] = s[j];
+	len = ft_strlen(s);
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	while ((i < len) && (s[len - 1] == ' ' || s[len - 1] == '\n' ||
+		s[len - 1] == '\t'))
+		len--;
+	if (len == i)
+		return (ft_strnew(1));
+	return (ft_strsub(s, i, (len - i)));
 }
