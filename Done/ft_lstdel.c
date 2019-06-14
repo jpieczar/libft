@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 15:26:20 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/14 15:26:46 by jhouston         ###   ########.fr       */
+/*   Created: 2019/06/14 15:27:28 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/06/14 15:27:49 by jhouston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(const void *content, size_t content_size)
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	t_list	*new;
+	t_list	*pntr;
+	t_list	*rtnp;
 
-	if (!(new = malloc(sizeof(t_list))))
-		return (NULL);
-	if (content == NULL)
+	pntr = *alst;
+	while (pntr->next)
 	{
-		new->content = NULL;
-		new->content_size = 0;
+		rtnp = pntr->next;
+		del(pntr, pntr->content_size);
+		pntr = rtnp;
 	}
-	else
-	{
-		if (!(new->content = ft_strdup(content)))
-			return (NULL);
-		new->content_size = (size_t)malloc(content_size);
-	}
-	new->next = NULL;
-	return (new);
+	del(pntr, pntr->content_size);
+	*alst = NULL;
 }
