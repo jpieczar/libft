@@ -36,9 +36,9 @@ static int	ft_wc(const char *s, char c)
 char		**ft_strsplit(const char *s, char c)
 {
 	char	**arr;
-	int	i;
+	int		i;
 	size_t	j;
-	int	k;
+	int		k;
 
 	i = 0;
 	k = 0;

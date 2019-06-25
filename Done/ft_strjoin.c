@@ -15,17 +15,13 @@
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*str;
-	int		len;
 
-	if (s1 != NULL && s2 != NULL)
-	{
-		len = ft_strlen(s1) + ft_strlen(s2);
-		str = (char*)malloc(sizeof(char) * (len + 1));
-		if (str == NULL)
-			return (NULL);
-		ft_strcpy(str, s1);
-		ft_strcat(str, s2);
-		return (str);
-	}
-	return (NULL);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	str = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (str == NULL)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }
