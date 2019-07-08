@@ -26,8 +26,11 @@ t_list	*ft_lstnew(const void *content, size_t content_size)
 	else
 	{
 		if (!(new->content = ft_strdup(content)))
+		{
+			free(new);
 			return (NULL);
-		new->content_size = (size_t)malloc(content_size);
+		}
+		new->content_size = content_size;
 	}
 	new->next = NULL;
 	return (new);

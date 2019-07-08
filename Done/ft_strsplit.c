@@ -6,7 +6,7 @@
 /*   By: jpieczar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:46:43 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/06/27 16:05:54 by jpieczar         ###   ########.fr       */
+/*   Updated: 2019/06/28 16:41:16 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_wc(const char *s, char c)
 				i++;
 		}
 	}
-	return (res + 1);
+	return (res);
 }
 
 char		**ft_strsplit(const char *s, char c)
@@ -42,8 +42,9 @@ char		**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	k = 0;
-	if (!(arr = (char**)malloc(sizeof(char*) * ft_wc(s, c))))
+	if (!(arr = (char**)malloc(sizeof(char*) * ft_wc(s, c) + 1)))
 		return (NULL);
+	arr[ft_wc(s, c)] = NULL;
 	while (s[i])
 	{
 		j = 0;

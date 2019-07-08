@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		return (NULL);
 	wen = f(lst);
 	new = wen;
-	while (lst)
+	while (lst->next)
 	{
 		wen->next = f(lst->next);
 		wen = wen->next;
