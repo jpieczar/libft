@@ -23,6 +23,13 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_ubly
+{
+	int				data;
+	struct s_ubly	*next;
+	struct s_ubly	*prev;
+}					t_node;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -82,5 +89,10 @@ void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+t_node				*ft_newdnode(void);
+void				ft_putnode(t_node **list, char **av, int ac);
+void				ft_loopdloop(t_node **list);
+void				ft_pooldpool(t_node **list);
 
 #endif
