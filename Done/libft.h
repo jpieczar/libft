@@ -94,5 +94,6 @@ t_node				*ft_newdnode(void);
 void				ft_putnode(t_node **list, char **av, int ac);
 void				ft_loopdloop(t_node **list);
 void				ft_pooldpool(t_node **list);
+int					ft_countf(t_node **list);
 
 #endif
