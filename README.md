@@ -9,9 +9,9 @@ Makefile commands:
 ~$make fclean (deletes both the .a and . .o files)
 ~$make re (runs fclean and then make)
 
--(lstadd, lstdel, lstdelone, lstiter, lstmap and lstnew) Deal with a linked list.
--(putnode, newdnode, loopdloop and pooldpool) Deal with a doubly linked list.
-Their respective structs are in the libft.h file.
+(lstadd, lstdel, lstdelone, lstiter, lstmap and lstnew) Deal with a linked list.
+
+(putnode, newdnode, loopdloop and pooldpool) Deal with a doubly linked list.
 
 Do not steal this and claim it as your own.
 Stealing is a sin and you might go to hell.
