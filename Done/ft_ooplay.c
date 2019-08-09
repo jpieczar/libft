@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnode.c                                       :+:      :+:    :+:   */
+/*   ft_ooplay.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpieczar <jpieczar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/26 07:53:26 by jpieczar          #+#    #+#             */
-/*   Updated: 2019/07/26 07:53:33 by jpieczar         ###   ########.fr       */
+/*   Created: 2019/07/29 11:41:34 by jpieczar          #+#    #+#             */
+/*   Updated: 2019/07/29 11:41:37 by jpieczar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnode(t_node **list, char **av, int ac)
+void	ft_ooplay(t_node **list)
 {
 	t_node	*tsil;
-	t_node	*back;
-	int		i;
 
 	tsil = *list;
-	i = 1;
-	while (i < ac)
+	while (tsil)
 	{
-		tsil->next = ft_newdnode();
-		tsil->data = ft_atoi(av[i]);
-		back = tsil;
+		ft_putnbr(tsil->data);
+		ft_putchar(' ');
 		tsil = tsil->next;
-		tsil->prev = back;
-		i++;
 	}
-	tsil = tsil->prev;
-	tsil->next = NULL;
+	ft_putendl("");
 }

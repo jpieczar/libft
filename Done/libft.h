@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE 100
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -90,10 +91,13 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+int					get_next_line(const int fd, char **line);
+
 t_node				*ft_newdnode(void);
 void				ft_putnode(t_node **list, char **av, int ac);
 void				ft_loopdloop(t_node **list);
 void				ft_pooldpool(t_node **list);
 int					ft_countf(t_node **list);
+void				ft_ooplay(t_node **list);
 
 #endif
