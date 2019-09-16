@@ -14,6 +14,6 @@ Makefile commands:
 (putnode, newdnode, loopdloop and pooldpool) Deal with a doubly linked list.
 
 Do not steal this and claim it as your own.
-Stealing is a sin and you might go to hell.
+Stealing is a sin.
 
 Enjoy the rest of your day :D
